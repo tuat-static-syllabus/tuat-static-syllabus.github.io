@@ -1,0 +1,40 @@
+table#basic_info {
+  width: 95%;
+  margin-left: auto;
+  margin-right: auto;
+  background: #8dc73f;
+}
+
+table#basic_info td {
+  border: 1px solid black;
+}
+td.basic_title {
+  color: white;
+  padding-left: 0.5em;
+  background: #48851d;
+}
+td.basic_text {
+  background: #e8ebd7;
+}
+
+table#details {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  border: 0px solid;
+  border-collapse: separate;
+}
+
+td.det_title {
+  background: #8dc73f;
+  padding-left: 0.5em;
+}
+
+td.det_content {
+  background: #e8ebd7;
+  padding-bottom: 2em;
+}
+
+span.syl_contents {
+  font: medium "Meiryo", normal;
+}
