@@ -2,3 +2,7 @@
 title: List
 layout: default
 ---
+
+{% for item in page.filters %}
+  <span class="filter_title">{{ item.title }}:</span><span class="filter_value">{{ item.value }}</span>
+{% endfor %}

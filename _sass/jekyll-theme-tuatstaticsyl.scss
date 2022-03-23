@@ -1,3 +1,5 @@
+// subject_list
+
 table#basic_info {
   width: 95%;
   margin-left: auto;
@@ -37,4 +39,13 @@ td.det_content {
 
 span.syl_contents {
   font: medium "Meiryo", normal;
+}
+
+// subject_list
+.filter_title{
+  font-weight: bold;
+}
+.filter_value{
+  margin-left: 0.2em;
+  margin-right: 1em;
 }
