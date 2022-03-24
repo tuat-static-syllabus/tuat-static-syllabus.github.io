@@ -10,8 +10,8 @@ layout: default
 
 <h3 class="label_results">{{ page.texts.results }}</h3>
 
-<table rules="all" id="rdlGrid_gridList"
-  style="color:0;border-color:#8dc73f;border-width:1px;border-style:solid;width:100%;border-collapse:collapse;"
+<table
+  rules="all" id="rdlGrid_gridList"
   cellspacing="0" cellpadding="6" bordercolor="#8dc73f" border="1" align="Center">
   <tbody>
     <tr class="subject_header" align="center">
@@ -34,8 +34,8 @@ layout: default
     {% endfor %}
     <tr align="center">
       <td colspan="6">
-        {% if page.pages.now >= 1 %}
-          <a class="page_number" href="/{{ page.language }}/{{ page.year }}/{{ page.faculty_id }}/_page{{ page.pages.now-1 }}.html">{{ page.texts.prev }}</a>
+        {% if page.pages.now > 1 %}
+          <a class="page_number" href="/{{ page.language }}/{{ page.year }}/{{ page.faculty_id }}/_page{{ page.pages.now | minus: 1 }}.html">{{ page.texts.prev }}</a>
         {% endif %}
 
         {% for idx in page.pages.indices %}
@@ -47,7 +47,7 @@ layout: default
         {% endfor %}
 
         {% unless page.pages.maximum %}
-          <a class="page_number" href="/{{ page.language }}/{{ page.year }}/{{ page.faculty_id }}/_page{{ page.pages.now+1 }}.html">{{ page.texts.next }}</a>
+          <a class="page_number" href="/{{ page.language }}/{{ page.year }}/{{ page.faculty_id }}/_page{{ page.pages.now | plus: 1 }}.html">{{ page.texts.next }}</a>
         {% endunless %}
       </td>
     </tr>

@@ -48,6 +48,15 @@ span.syl_contents {
 }
 
 // subject_list
+table#rdlGrid_gridList {
+  color:0;
+  border-color:#8dc73f;
+  border-width:1px;
+  border-style:solid;
+  width:100%;
+  border-collapse:collapse;
+}
+
 .filter_title{
   font-weight: bold;
 }
