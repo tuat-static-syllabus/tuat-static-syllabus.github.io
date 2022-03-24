@@ -26,7 +26,7 @@ layout: default
       <tr class="subject_row">
         <td class="subjects_cell" align="center">{{ forloop.index }}</td>
         <td class="subjects_cell" align="left">{{ item.semester }}</td>
-        <td class="subjects_cell" align="left"><a href="/{{ page.language }}/{{ item.id }}.html">{{ item.title }}</a></td>
+        <td class="subjects_cell" align="left"><a href="/{{ page.language }}/{{ page.year }}/{{ page.faculty_id }}/{{ item.id }}.html">{{ item.title }}</a></td>
         <td class="subjects_cell" align="left">{{ item.instructor }}</td>
         <td class="subjects_cell" align="left">{{ item.day_period }}</td>
         <td class="subjects_cell" align="left">{{ item.year_start }}～{{ item.year_end }}</td>
@@ -34,18 +34,21 @@ layout: default
     {% endfor %}
     <tr align="center">
       <td colspan="6">
-        <span>1</span>&nbsp;&nbsp;&nbsp;
-        <a href="javascript:__doPostBack('rdlGrid$gridList$_ctl54$_ctl26','')" style="color:0;">2</a>&nbsp;&nbsp;&nbsp;
-        <a href="javascript:__doPostBack('rdlGrid$gridList$_ctl54$_ctl27','')" style="color:0;">3</a>&nbsp;&nbsp;&nbsp;
-        <a href="javascript:__doPostBack('rdlGrid$gridList$_ctl54$_ctl28','')" style="color:0;">4</a>&nbsp;&nbsp;&nbsp;
-        <a href="javascript:__doPostBack('rdlGrid$gridList$_ctl54$_ctl29','')" style="color:0;">5</a>&nbsp;&nbsp;&nbsp;
-        <a href="javascript:__doPostBack('rdlGrid$gridList$_ctl54$_ctl30','')" style="color:0;">6</a>&nbsp;&nbsp;&nbsp;
-        <a href="javascript:__doPostBack('rdlGrid$gridList$_ctl54$_ctl31','')" style="color:0;">7</a>&nbsp;&nbsp;&nbsp;
-        <a href="javascript:__doPostBack('rdlGrid$gridList$_ctl54$_ctl32','')" style="color:0;">8</a>&nbsp;&nbsp;&nbsp;
-        <a href="javascript:__doPostBack('rdlGrid$gridList$_ctl54$_ctl33','')" style="color:0;">9</a>&nbsp;&nbsp;&nbsp;
-        <a href="javascript:__doPostBack('rdlGrid$gridList$_ctl54$_ctl34','')" style="color:0;">10</a>&nbsp;&nbsp;&nbsp;
-        <a href="javascript:__doPostBack('rdlGrid$gridList$_ctl54$_ctl35','')" style="color:0;">...</a>&nbsp;&nbsp;&nbsp;
-        <a href="javascript:__doPostBack('rdlGrid$gridList$_ctl54$_ctl1','')">次へ</a>&nbsp;
+        {% if page.pages.now >= 1 %}
+          <a class="page_number" href="/{{ page.language }}/{{ page.year }}/{{ page.faculty_id }}/_page{{ page.pages.now-1 }}.html">{{ page.texts.prev }}</a>
+        {% endif %}
+
+        {% for idx in page.pages.indices %}
+          {% if idx == page.pages.now %}
+            <span class="page_number">{{ idx }}</span>
+          {% else %}
+            <a class="page_number" href="/{{ page.language }}/{{ page.year }}/{{ page.faculty_id }}/_page{{ idx }}.html">{{ idx }}</a>
+          {% endif %}
+        {% endfor %}
+
+        {% unless page.pages.maximum %}
+          <a class="page_number" href="/{{ page.language }}/{{ page.year }}/{{ page.faculty_id }}/_page{{ page.pages.now+1 }}.html">{{ page.texts.next }}</a>
+        {% endunless %}
       </td>
     </tr>
   </tbody>

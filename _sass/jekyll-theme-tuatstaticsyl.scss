@@ -1,3 +1,9 @@
+// default content
+footer.site-footer {
+  margin-top: 1em;
+}
+
+
 // subject_list
 
 table#basic_info {
@@ -61,4 +67,10 @@ tr.subject_row:nth-child(odd) {
 }
 td.subjects_cell {
   border-color:#8dc73f;border-width:1px;border-style:solid;
+}
+
+.page_number{
+  color: #000;
+  margin-left: 0.5em;
+  margin-right: 0.5em;
 }
