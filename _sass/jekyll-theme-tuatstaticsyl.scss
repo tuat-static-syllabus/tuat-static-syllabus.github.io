@@ -49,3 +49,16 @@ span.syl_contents {
   margin-left: 0.2em;
   margin-right: 1em;
 }
+
+tr.subject_header {
+  color:White;background-color:#48851d;
+}
+tr.subject_row:nth-child(even) {
+  background-color:White;
+}
+tr.subject_row:nth-child(odd) {
+  background-color:#e6ffc0;
+}
+td.subjects_cell {
+  border-color:#8dc73f;border-width:1px;border-style:solid;
+}

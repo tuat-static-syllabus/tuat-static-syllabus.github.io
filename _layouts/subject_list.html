@@ -3,6 +3,50 @@ title: List
 layout: default
 ---
 
+<h3 class="label_filters">{{ page.texts.filters }}</h3>
 {% for item in page.filters %}
   <span class="filter_title">{{ item.title }}:</span><span class="filter_value">{{ item.value }}</span>
 {% endfor %}
+
+<h3 class="label_results">{{ page.texts.results }}</h3>
+
+<table rules="all" id="rdlGrid_gridList"
+  style="color:0;border-color:#8dc73f;border-width:1px;border-style:solid;width:100%;border-collapse:collapse;"
+  cellspacing="0" cellpadding="6" bordercolor="#8dc73f" border="1" align="Center">
+  <tbody>
+    <tr class="subject_header" align="center">
+      <td class="subjects_cell">&nbsp;</td>
+      <td class="subjects_cell">{{ page.texts.semester }}</td>
+      <td class="subjects_cell">{{ page.texts.title }}</td>
+      <td class="subjects_cell">{{ page.texts.instructor }}</td>
+      <td class="subjects_cell">{{ page.texts.day_period }}</td>
+      <td class="subjects_cell">{{ page.texts.year }}</td>
+    </tr>
+    {% for item in page.subjects %}
+      <tr class="subject_row">
+        <td class="subjects_cell" align="center">{{ forloop.index }}</td>
+        <td class="subjects_cell" align="left">{{ item.semester }}</td>
+        <td class="subjects_cell" align="left"><a href="/{{ page.language }}/{{ item.id }}.html">{{ item.title }}</a></td>
+        <td class="subjects_cell" align="left">{{ item.instructor }}</td>
+        <td class="subjects_cell" align="left">{{ item.day_period }}</td>
+        <td class="subjects_cell" align="left">{{ item.year_start }}～{{ item.year_end }}</td>
+      </tr>
+    {% endfor %}
+    <tr align="center">
+      <td colspan="6">
+        <span>1</span>&nbsp;&nbsp;&nbsp;
+        <a href="javascript:__doPostBack('rdlGrid$gridList$_ctl54$_ctl26','')" style="color:0;">2</a>&nbsp;&nbsp;&nbsp;
+        <a href="javascript:__doPostBack('rdlGrid$gridList$_ctl54$_ctl27','')" style="color:0;">3</a>&nbsp;&nbsp;&nbsp;
+        <a href="javascript:__doPostBack('rdlGrid$gridList$_ctl54$_ctl28','')" style="color:0;">4</a>&nbsp;&nbsp;&nbsp;
+        <a href="javascript:__doPostBack('rdlGrid$gridList$_ctl54$_ctl29','')" style="color:0;">5</a>&nbsp;&nbsp;&nbsp;
+        <a href="javascript:__doPostBack('rdlGrid$gridList$_ctl54$_ctl30','')" style="color:0;">6</a>&nbsp;&nbsp;&nbsp;
+        <a href="javascript:__doPostBack('rdlGrid$gridList$_ctl54$_ctl31','')" style="color:0;">7</a>&nbsp;&nbsp;&nbsp;
+        <a href="javascript:__doPostBack('rdlGrid$gridList$_ctl54$_ctl32','')" style="color:0;">8</a>&nbsp;&nbsp;&nbsp;
+        <a href="javascript:__doPostBack('rdlGrid$gridList$_ctl54$_ctl33','')" style="color:0;">9</a>&nbsp;&nbsp;&nbsp;
+        <a href="javascript:__doPostBack('rdlGrid$gridList$_ctl54$_ctl34','')" style="color:0;">10</a>&nbsp;&nbsp;&nbsp;
+        <a href="javascript:__doPostBack('rdlGrid$gridList$_ctl54$_ctl35','')" style="color:0;">...</a>&nbsp;&nbsp;&nbsp;
+        <a href="javascript:__doPostBack('rdlGrid$gridList$_ctl54$_ctl1','')">次へ</a>&nbsp;
+      </td>
+    </tr>
+  </tbody>
+</table>
