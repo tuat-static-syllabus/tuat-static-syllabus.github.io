@@ -6,7 +6,7 @@ year: 2022
 faculty_id: "20"
 texts: {
   filters: "Filters:",
-  results: "Results",
+  results: "Results (%TOTAL% items total)",
   semester: "Semester",
   title: "Course title",
   instructor: "Instructor(s)",
@@ -14,6 +14,7 @@ texts: {
   year: "Year",
   prev: "Previous",
   next: "Next",
+  total: "Total",
 }
 contents:
   filters: [
@@ -33,5 +34,6 @@ contents:
     maximum: false,
     indices: [1, 5, 7, 9, 10, 14, 40]
   }
+  total: 114514
 ---
 # Willkommen

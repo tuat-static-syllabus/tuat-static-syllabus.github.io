@@ -8,11 +8,11 @@ layout: default
   <span class="filter_title">{{ item.title }}:</span><span class="filter_value">{{ item.value }}</span>
 {% endfor %}
 
-<h3 class="label_results">{{ page.texts.results }}</h3>
+<h3 class="label_results">{{ page.texts.results | replace:'%TOTAL%',page.contents.total }}</h3>
 
 <table
   rules="all" id="rdlGrid_gridList"
-  cellspacing="0" cellpadding="6" bordercolor="#8dc73f" border="1" align="Center">
+  cellspacing="0" cellpadding="6" bordercolor="#8dc73f" border="1" align="center">
   <tbody>
     <tr class="subject_header" align="center">
       <td class="subjects_cell">&nbsp;</td>
