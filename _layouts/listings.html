@@ -4,7 +4,7 @@ layout: default
 ---
 
 <ul>
-  {% for item in page.items %}
+  {% for item in page.contents.items %}
     <li><a href="{{ item.href }}">{{ item.value }}</a></li>
   {% endfor %}
 </ul>
