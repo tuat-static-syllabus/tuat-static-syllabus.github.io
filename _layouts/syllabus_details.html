@@ -6,13 +6,13 @@ layout: default
 <table id="basic_info" bordercolordark="#006600" bordercolorlight="#8dc73f" rules="all" cellspacing="0" cellpadding="4" border="1">
   <tbody>
     <tr>
-      <td colspan="6" id="labelSubjectName" class="basic_title">{{ page.texts.subjectname }}</td>
+      <td colspan="6" id="labelSubjectName" class="basic_title">{{ page.texts.name }}</td>
     </tr>
     <tr>
       <td colspan="6" class="basic_text">
-        <span id="Detail_lbl_sbj_name">{{ page.contents.subjectname_jpn }}</span>
+        <span id="Detail_lbl_sbj_name">{{ page.contents.name.jp }}</span>
         &nbsp;
-        <span id="Detail_lbl_sbj_name_e">[{{ page.contents.subjectname_eng }}]</span>
+        <span id="Detail_lbl_sbj_name_e">[{{ page.contents.name.en }}]</span>
       </td>
     </tr>
     <tr>
@@ -44,13 +44,13 @@ layout: default
       </td>
     </tr>
     <tr>
-      <td class="basic_title" id="Detail_lblTypeName">{{ page.texts.coursetype }}</td>
+      <td class="basic_title" id="Detail_lblTypeName">{{ page.texts.course_type }}</td>
       <td class="basic_text">
-        <span id="Detail_lbl_type_name">{{ page.contents.coursetype }}</span>&nbsp;
+        <span id="Detail_lbl_type_name">{{ page.contents.course_type }}</span>&nbsp;
       </td>
-      <td class="basic_title" id="Detail_lblLctReferCd">{{ page.texts.courseid }}</td>
+      <td class="basic_title" id="Detail_lblLctReferCd">{{ page.texts.course_code }}</td>
       <td colspan="3" class="basic_text">
-        <span id="Detail_lbl_lct_cd">{{ page.contents.courseid }}</span>
+        <span id="Detail_lbl_lct_cd">{{ page.contents.course_code }}</span>
       </td>
     </tr>
     <tr>
@@ -58,15 +58,15 @@ layout: default
     </tr>
     <tr>
       <td colspan="6" class="basic_text">
-        <span id="Detail_lbl_staff_name">{{ page.contents.instructor_jpn }}</span>
+        <span id="Detail_lbl_staff_name">{{ page.contents.instructor.jp }}</span>
         &nbsp;
-        <span id="Detail_lbl_staff_name_e">[{{ page.contents.instructor_eng }}]</span>
+        <span id="Detail_lbl_staff_name_e">[{{ page.contents.instructor.en }}]</span>
       </td>
     </tr>
     <tr>
-      <td class="basic_title" id="Detail_lblSectionName">{{ page.texts.affiliation }}</td>
+      <td class="basic_title" id="Detail_lblSectionName">{{ page.texts.facility_affiliation }}</td>
       <td class="basic_text">
-        <span id="Detail_lbl_section_name">{{ page.contents.affiliation }}</span>
+        <span id="Detail_lbl_section_name">{{ page.contents.facility_affiliation }}</span>
       </td>
       <td class="basic_title">{{ page.texts.office }}</td>
       <td class="basic_text">
@@ -83,27 +83,27 @@ layout: default
 <table id="details" cellspacing="0" cellpadding="4">
   <tbody>
     <tr>
-      <td class="det_title">{{ page.texts.coursedesc }}</td>
+      <td class="det_title">{{ page.texts.course_description }}</td>
     </tr>
     <tr>
       <td class="det_content">
-        <span id="details_outline" class="syl_contents">{{ page.contents.coursedesc }}</span>
+        <span id="details_outline" class="syl_contents">{{ page.contents.course_description }}</span>
       </td>
     </tr>
     <tr>
-      <td class="det_title">{{ page.texts.explearning }}</td>
+      <td class="det_title">{{ page.texts.expected_learning }}</td>
     </tr>
     <tr>
       <td class="det_content">
-        <span id="Detail_lbl_standard" class="syl_contents">{{ page.contents.coursedesc }}</span>
+        <span id="Detail_lbl_standard" class="syl_contents">{{ page.contents.expected_learning }}</span>
       </td>
     </tr>
     <tr>
-      <td class="det_title">{{ page.texts.coursesche }}</td>
+      <td class="det_title">{{ page.texts.course_schedule }}</td>
     </tr>
     <tr>
       <td class="det_content">
-        <span id="Detail_lbl_schedule" class="syl_contents">{{ page.contents.coursesche }}</span>
+        <span id="Detail_lbl_schedule" class="syl_contents">{{ page.contents.course_schedule }}</span>
       </td>
     </tr>
     <tr>
@@ -115,19 +115,19 @@ layout: default
       </td>
     </tr>
     <tr>
-      <td class="det_title">{{ page.texts.txtmats }}</td>
+      <td class="det_title">{{ page.texts.texts_and_materials }}</td>
     </tr>
     <tr>
       <td class="det_content">
-        <span id="Detail_lbl_text_book" class="syl_contents">{{ page.contents.txtmats }}</span>
+        <span id="Detail_lbl_text_book" class="syl_contents">{{ page.contents.texts_and_materials }}</span>
       </td>
     </tr>
     <tr>
-      <td class="det_title">{{ page.texts.reference }}</td>
+      <td class="det_title">{{ page.texts.references }}</td>
     </tr>
     <tr>
       <td class="det_content">
-        <span id="Detail_lbl_reference_book" class="syl_contents">{{ page.contents.reference }}</span>
+        <span id="Detail_lbl_reference_book" class="syl_contents">{{ page.contents.references }}</span>
       </td>
     </tr>
     <tr>
@@ -139,75 +139,75 @@ layout: default
       </td>
     </tr>
     <tr>
-      <td class="det_title">{{ page.texts.messageinst }}</td>
+      <td class="det_title">{{ page.texts.message_from_instructor }}</td>
     </tr>
     <tr>
       <td class="det_content">
-        <span id="Detail_lbl_something" class="syl_contents">{{ page.contents.messageinst }}</span>
+        <span id="Detail_lbl_something" class="syl_contents">{{ page.contents.message_from_instructor }}</span>
       </td>
     </tr>
     <tr>
-      <td class="det_title">{{ page.texts.keywords }}</td>
+      <td class="det_title">{{ page.texts.course_keywords }}</td>
     </tr>
     <tr>
       <td class="det_content">
-        <span id="Detail_lbl_keyword" class="syl_contents">{{ page.contents.keywords }}</span>
+        <span id="Detail_lbl_keyword" class="syl_contents">{{ page.contents.course_keywords }}</span>
       </td>
     </tr>
     <tr>
-      <td class="det_title">{{ page.texts.officehours }}</td>
+      <td class="det_title">{{ page.texts.office_hours }}</td>
     </tr>
     <tr>
       <td class="det_content">
-        <span id="Detail_lbl_office_hours" class="syl_contents">{{ page.contents.officehours }}</span>
+        <span id="Detail_lbl_office_hours" class="syl_contents">{{ page.contents.office_hours }}</span>
       </td>
     </tr>
     <tr>
-      <td class="det_title">{{ page.texts.remark1 }}</td>
+      <td class="det_title">{{ page.texts.remarks_1 }}</td>
     </tr>
     <tr>
       <td class="det_content">
-        <span id="Detail_lbl_note1" class="syl_contents">{{ page.contents.remark1 }}</span>
+        <span id="Detail_lbl_note1" class="syl_contents">{{ page.contents.remarks_1 }}</span>
       </td>
     </tr>
     <tr>
-      <td class="det_title">{{ page.texts.remark2 }}</td>
+      <td class="det_title">{{ page.texts.remarks_2 }}</td>
     </tr>
     <tr>
       <td class="det_content">
-        <span id="Detail_lbl_note2" class="syl_contents">{{ page.contents.remark2 }}</span>
+        <span id="Detail_lbl_note2" class="syl_contents">{{ page.contents.remarks_2 }}</span>
       </td>
     </tr>
     <tr>
-      <td class="det_title">{{ page.texts.refhomepage }}</td>
+      <td class="det_title">{{ page.texts.related_url }}</td>
     </tr>
     <tr>
       <td class="det_content">
-        <span id="Detail_lbl_url" class="syl_contents">{{ page.contents.refhomepage }}</span>
+        <span id="Detail_lbl_url" class="syl_contents">{{ page.contents.related_url }}</span>
       </td>
     </tr>
     <tr>
-      <td class="det_title">{{ page.texts.lecturelang }}</td>
+      <td class="det_title">{{ page.texts.course_language }}</td>
     </tr>
     <tr>
       <td class="det_content">
-        <span id="Detail_lbl_num_language_name" class="syl_contents">{{ page.contents.lecturelang }}</span>
+        <span id="Detail_lbl_num_language_name" class="syl_contents">{{ page.contents.course_language }}</span>
       </td>
     </tr>
     <tr>
-      <td class="det_title">{{ page.texts.langlerne }}</td>
+      <td class="det_title">{{ page.texts.taught_language }}</td>
     </tr>
     <tr>
       <td class="det_content">
-        <span id="Detail_lbl_num_sbj_name" class="syl_contents">{{ page.contents.langlerne }}</span>
+        <span id="Detail_lbl_num_sbj_name" class="syl_contents">{{ page.contents.taught_language }}</span>
       </td>
     </tr>
     <tr>
-      <td class="det_title">{{ page.texts.lastupdate }}</td>
+      <td class="det_title">{{ page.texts.last_update }}</td>
     </tr>
     <tr>
       <td class="det_content">
-        <span id="Detail_lbl_update_dt" class="syl_contents">{{ page.contents.lastupdate }}</span>
+        <span id="Detail_lbl_update_dt" class="syl_contents">{{ page.contents.last_update }}</span>
       </td>
     </tr>
 
