@@ -4,7 +4,7 @@ layout: default
 ---
 
 <h3 class="label_filters">{{ page.texts.filters }}</h3>
-{% for item in page.filters %}
+{% for item in page.contents.filters %}
   <span class="filter_title">{{ item.title }}:</span><span class="filter_value">{{ item.value }}</span>
 {% endfor %}
 
@@ -22,7 +22,7 @@ layout: default
       <td class="subjects_cell">{{ page.texts.day_period }}</td>
       <td class="subjects_cell">{{ page.texts.year }}</td>
     </tr>
-    {% for item in page.subjects %}
+    {% for item in page.contents.subjects %}
       <tr class="subject_row">
         <td class="subjects_cell" align="center">{{ forloop.index }}</td>
         <td class="subjects_cell" align="left">{{ item.semester }}</td>
@@ -34,20 +34,20 @@ layout: default
     {% endfor %}
     <tr align="center">
       <td colspan="6">
-        {% if page.pages.now > 1 %}
-          <a class="page_number" href="/{{ page.language }}/{{ page.year }}/{{ page.faculty_id }}/_page{{ page.pages.now | minus: 1 }}.html">{{ page.texts.prev }}</a>
+        {% if page.contents.pages.now > 1 %}
+          <a class="page_number" href="/{{ page.language }}/{{ page.year }}/{{ page.faculty_id }}/_page{{ page.contents.pages.now | minus: 1 }}.html">{{ page.texts.prev }}</a>
         {% endif %}
 
-        {% for idx in page.pages.indices %}
-          {% if idx == page.pages.now %}
+        {% for idx in page.contents.pages.indices %}
+          {% if idx == page.contents.pages.now %}
             <span class="page_number">{{ idx }}</span>
           {% else %}
             <a class="page_number" href="/{{ page.language }}/{{ page.year }}/{{ page.faculty_id }}/_page{{ idx }}.html">{{ idx }}</a>
           {% endif %}
         {% endfor %}
 
-        {% unless page.pages.maximum %}
-          <a class="page_number" href="/{{ page.language }}/{{ page.year }}/{{ page.faculty_id }}/_page{{ page.pages.now | plus: 1 }}.html">{{ page.texts.next }}</a>
+        {% unless page.contents.pages.maximum %}
+          <a class="page_number" href="/{{ page.language }}/{{ page.year }}/{{ page.faculty_id }}/_page{{ page.contents.pages.now | plus: 1 }}.html">{{ page.texts.next }}</a>
         {% endunless %}
       </td>
     </tr>
