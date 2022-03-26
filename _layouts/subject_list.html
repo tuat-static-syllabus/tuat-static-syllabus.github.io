@@ -26,7 +26,7 @@ layout: default
       <tr class="subject_row">
         <td class="subjects_cell" align="center">{{ forloop.index }}</td>
         <td class="subjects_cell" align="left">{{ item.semester }}</td>
-        <td class="subjects_cell" align="left"><a href="/{{ page.language }}/{{ page.year }}/{{ page.faculty_id }}/{{ item.id }}.html">{{ item.title }}</a></td>
+        <td class="subjects_cell" align="left"><a href="{{ item.href }}">{{ item.title }}</a></td>
         <td class="subjects_cell" align="left">{{ item.instructor }}</td>
         <td class="subjects_cell" align="left">{{ item.day_period }}</td>
         <td class="subjects_cell" align="left">{{ item.year_start }}～{{ item.year_end }}</td>
@@ -35,19 +35,19 @@ layout: default
     <tr align="center">
       <td colspan="6">
         {% if page.contents.pages.now > 1 %}
-          <a class="page_number" href="/{{ page.language }}/{{ page.year }}/{{ page.faculty_id }}/_page{{ page.contents.pages.now | minus: 1 }}.html">{{ page.texts.prev }}</a>
+          <a class="page_number" href="_page{{ page.contents.pages.now | minus: 1 }}.html">{{ page.texts.prev }}</a>
         {% endif %}
 
         {% for idx in page.contents.pages.indices %}
           {% if idx == page.contents.pages.now %}
             <span class="page_number">{{ idx }}</span>
           {% else %}
-            <a class="page_number" href="/{{ page.language }}/{{ page.year }}/{{ page.faculty_id }}/_page{{ idx }}.html">{{ idx }}</a>
+            <a class="page_number" href="_page{{ idx }}.html">{{ idx }}</a>
           {% endif %}
         {% endfor %}
 
         {% unless page.contents.pages.maximum %}
-          <a class="page_number" href="/{{ page.language }}/{{ page.year }}/{{ page.faculty_id }}/_page{{ page.contents.pages.now | plus: 1 }}.html">{{ page.texts.next }}</a>
+          <a class="page_number" href="_page{{ page.contents.pages.now | plus: 1 }}.html">{{ page.texts.next }}</a>
         {% endunless %}
       </td>
     </tr>

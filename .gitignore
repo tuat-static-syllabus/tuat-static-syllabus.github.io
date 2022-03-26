@@ -6,5 +6,8 @@ _site
 Gemfile.lock
 
 generated/
+en/
+ja/
+index.html
 
 .jekyll-metadata
