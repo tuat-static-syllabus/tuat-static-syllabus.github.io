@@ -35,19 +35,19 @@ layout: default
     <tr align="center">
       <td colspan="6">
         {% if page.contents.pages.now > 1 %}
-          <a class="page_number" href="_page{{ page.contents.pages.now | minus: 1 }}.html">{{ page.texts.prev }}</a>
+          <a class="page_number" href="page{{ page.contents.pages.now | minus: 1 }}.html">{{ page.texts.prev }}</a>
         {% endif %}
 
         {% for idx in page.contents.pages.indices %}
           {% if idx == page.contents.pages.now %}
             <span class="page_number">{{ idx }}</span>
           {% else %}
-            <a class="page_number" href="_page{{ idx }}.html">{{ idx }}</a>
+            <a class="page_number" href="page{{ idx }}.html">{{ idx }}</a>
           {% endif %}
         {% endfor %}
 
         {% unless page.contents.pages.maximum %}
-          <a class="page_number" href="_page{{ page.contents.pages.now | plus: 1 }}.html">{{ page.texts.next }}</a>
+          <a class="page_number" href="page{{ page.contents.pages.now | plus: 1 }}.html">{{ page.texts.next }}</a>
         {% endunless %}
       </td>
     </tr>
