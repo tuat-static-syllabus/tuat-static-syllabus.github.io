@@ -2,7 +2,7 @@ name: Merge working branch
 
 on:
   push:
-    branches: [coding, master]
+    branches: [coding]
   workflow_dispatch:
     inputs:
 
