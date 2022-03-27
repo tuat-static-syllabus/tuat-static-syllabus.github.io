@@ -5,6 +5,10 @@ layout: default
 
 <ul>
   {% for item in page.contents.items %}
-    <li><a href="{{ item.href }}">{{ item.value }}</a></li>
+    {% if item.href and item.href != "" %}
+      <li><a href="{{ item.href }}">{{ item.value }}</a></li>
+    {% else %}
+      <li>{{ item.value }}</li>
+    {% endif %}
   {% endfor %}
 </ul>

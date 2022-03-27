@@ -29,7 +29,11 @@ layout: default
         <td class="subjects_cell" align="left"><a href="{{ item.href }}">{{ item.title }}</a></td>
         <td class="subjects_cell" align="left">{{ item.instructor }}</td>
         <td class="subjects_cell" align="left">{{ item.day_period }}</td>
-        <td class="subjects_cell" align="left">{{ item.year_start }}～{{ item.year_end }}</td>
+        {% if item.year.min or item.year.max %}
+          <td class="subjects_cell" align="left"><span>{{ item.year.min }}</span>～<span>{{ item.year.max }}</span></td>
+        {% else %}
+          <td class="subjects_cell" align="left"><!-- Grades info isn't supplied --></td>
+        {% endif %}
       </tr>
     {% endfor %}
     <tr align="center">
