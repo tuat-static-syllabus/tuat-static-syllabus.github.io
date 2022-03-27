@@ -1,0 +1,29 @@
+name: Merge working branch
+
+on:
+  push:
+    branches: [coding, master]
+  workflow_dispatch:
+    inputs:
+
+jobs:
+  merge:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        ref: master
+        fetch-depth: 0
+    - name: Configure git
+      run: |
+        set +e -x
+        git config --global pull.rebase false
+        git config --global core.editor "true"
+        git config --global user.name Lesmiscore
+        git config --global user.email 10355528+Lesmiscore@users.noreply.github.com
+    - name: Merge
+      env:
+        GIT_EDITOR: "true"
+      run: git merge origin/coding
+    - name: Push
+      run: git push origin HEAD:master
